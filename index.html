@@ -709,27 +709,31 @@
       <div class="form-row">
         <div class="form-group">
           <label for="name">Full Name *</label>
-          <input type="text" id="name" placeholder="Jane Smith" autocomplete="name">
+          <input type="text" id="name" autocomplete="name">
         </div>
         <div class="form-group">
           <label for="age">Age *</label>
-          <input type="number" id="age" placeholder="21" min="1" max="120">
+          <input type="number" id="age">
         </div>
       </div>
       <div class="form-group">
+        <label for="phone">Email *</label>
+        <input type="text" id="email" autocomplete="tel">
+      </div>
+      <div class="form-group">
         <label for="phone">Phone Number *</label>
-        <input type="tel" id="phone" placeholder="(555) 555-5555" autocomplete="tel">
+        <input type="tel" id="phone" autocomplete="tel">
       </div>
       <div class="form-group">
         <label for="affiliation">Affiliation <span style="font-size:0.65rem; color: var(--text-muted); text-transform: none; letter-spacing: 0;">(optional)</span></label>
-        <input type="text" id="affiliation" placeholder="e.g. UW-La Crosse, La Crosse Track Club">
+        <input type="text" id="affiliation" placeholder="e.g. Iola Running Club">
       </div>
 
       <div class="venmo-box">
         <div class="venmo-box-title">Payment via Venmo</div>
         <div class="venmo-handle">@cbvater</div>
         <div class="venmo-note">
-          Send <strong>$5</strong> with the note <strong>"Sundown Mile – [your name]"</strong>.<br>
+          Send <strong>$5</strong> with the note "Sundown Mile – [your name]" to <strong>@cbvater</strong>.<br>
           Your registration is confirmed once payment is received.
         </div>
       </div>
@@ -774,9 +778,11 @@
     const age  = document.getElementById('age').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const affiliation = document.getElementById('affiliation').value.trim();
+    const email = document.getElementById('email').value.trim();
+
     const errEl = document.getElementById('formError');
 
-    if (!name || !age || !phone) {
+    if (!name || !age || !phone || !email) {
       errEl.style.display = 'block';
       return;
     }
@@ -786,7 +792,7 @@
     btn.disabled = true;
     btn.textContent = 'Submitting...';
 
-    const payload = { name, age, phone, affiliation };
+    const payload = { name, age, email, phone, affiliation };
 
     try {
       await fetch(SCRIPT_URL, {
