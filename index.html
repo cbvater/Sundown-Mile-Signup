@@ -541,12 +541,47 @@
   </style>
 </head>
 <body>
+<!-- GALLERY MODAL 2025-->
+<div class="modal-overlay" id="galleryOverlay" onclick="handleGalleryClick(event)">
+  <div class="modal" id="galleryModal" style="max-width: 700px;">
+    <button class="modal-close" onclick="closeGallery()">✕</button>
+    <div class="modal-eyebrow">Sundown Mile</div>
+    <h2>Experience 2025</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 10px;">
+      <img src="IMG_5457.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="IMG_5432.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="PXL_20250810_010430798_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="PXL_20250810_012503815_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="PXL_20250810_011047956_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="PXL_20250810_015051656_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="galleryOverlay2024" onclick="handleGalleryClick2024(event)">
+  <div class="modal" id="galleryModal2024" style="max-width: 700px;">
+    <button class="modal-close" onclick="closeGallery2024()">✕</button>
+    <div class="modal-eyebrow">Sundown Mile</div>
+    <h2>Experience 2024</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 10px;">
+      <img src="DSC02611.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="DSC02615.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="DSC02585.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="IMG_3220.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="IMG_6134.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="IMG_3228_(copy).jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
+      <img src="IMG_3251.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
+
+    </div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Sundown Mile</div>
   <button class="nav-cta" onclick="openModal()">Register Now</button>
 </nav>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -638,7 +673,8 @@
     <div class="info-card fade-up">
       <div style="padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border);">
         <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--orange); letter-spacing: 0.04em;">2025</div>
-        <div style="font-size: 0.82rem; color: var(--text-muted);">70 runners</div>
+        <div style="font-size: 1rem; color: var(--text-muted);">70 runners</div>
+        <div class="info-val"><span onclick="openGallery()" style="color: var(--orange); cursor: pointer;">View 2025 Gallery →</span></div>
       </div>
       <div class="info-row">
         <div><div class="info-key">In Dedication To</div><div class="info-val">Zach Slevin</div></div>
@@ -653,7 +689,9 @@
     <div class="info-card fade-up">
       <div style="padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border);">
         <div style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--orange); letter-spacing: 0.04em;">2024</div>
-        <div style="font-size: 0.82rem; color: var(--text-muted);">53 runners</div>
+        <div style="font-size: 1rem; color: var(--text-muted);">53 runners</div>
+        <div class="info-val"><span onclick="openGallery2024()" style="color: var(--orange); cursor: pointer;">View 2024 Gallery →</span></div>
+
       </div>
       <div class="info-row">
         <div><div class="info-key">In Dedication To</div><div class="info-val">Katelyn Hoffman, Mike Trzebiatowski</div></div>
@@ -689,6 +727,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 <!-- FOOTER -->
@@ -815,6 +855,30 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+function openGallery() {
+  document.getElementById('galleryOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGallery() {
+  document.getElementById('galleryOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleGalleryClick(e) {
+  if (e.target === document.getElementById('galleryOverlay')) closeGallery();
+}
+
+  function openGallery2024() {
+  document.getElementById('galleryOverlay2024').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGallery2024() {
+  document.getElementById('galleryOverlay2024').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function handleGalleryClick2024(e) {
+  if (e.target === document.getElementById('galleryOverlay2024')) closeGallery2024();
+}
 </script>
 
 <!--
