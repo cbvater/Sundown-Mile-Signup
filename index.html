@@ -832,7 +832,7 @@
     btn.disabled = true;
     btn.textContent = 'Submitting...';
 
-    const payload = { name, age, email, phone, affiliation };
+    const payload = { name, email, age,  phone, affiliation };
 
     try {
       await fetch(SCRIPT_URL, {
@@ -889,7 +889,7 @@ function handleGalleryClick2024(e) {
 STEP 1: Create your Google Sheet
   - Open Google Sheets and create a new spreadsheet
   - Name the columns in Row 1:
-    Timestamp | Name | Age | Phone | Affiliation
+    Timestamp | Name | Age | Email | Phone | Affiliation
 
 STEP 2: Open Apps Script
   - In the Sheet, go to Extensions → Apps Script
