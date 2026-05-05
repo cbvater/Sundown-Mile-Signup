@@ -177,10 +177,11 @@
       border-bottom: 1px solid var(--border);
       background: var(--surface);
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
+      overflow-x: hidden;
     }
     .stat {
-      flex: 1; min-width: 140px;
+      flex: 1; min-width: 80px;
       padding: 1.8rem 2rem;
       border-right: 1px solid var(--border);
       text-align: center;
@@ -547,14 +548,6 @@
     <button class="modal-close" onclick="closeGallery()">✕</button>
     <div class="modal-eyebrow">Sundown Mile</div>
     <h2>Experience 2025</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px;">
-      <img src="IMG_5457.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="IMG_5432.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="PXL_20250810_010430798_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="PXL_20250810_012503815_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="PXL_20250810_011047956_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="PXL_20250810_015051656_Original.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-    </div>
     <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
       <img src="IMG_5457.jpg" style="width:100%; border-radius: 6px; object-fit: contain;">
       <img src="IMG_5432.jpg" style="width:100%; border-radius: 6px; object-fit: contain;">
@@ -571,15 +564,14 @@
     <button class="modal-close" onclick="closeGallery2024()">✕</button>
     <div class="modal-eyebrow">Sundown Mile</div>
     <h2>Experience 2024</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 10px;">
-      <img src="DSC02611.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="DSC02615.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="DSC02585.JPG" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="IMG_3220.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="IMG_6134.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="IMG_3228_(copy).jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
-      <img src="IMG_3251.jpg" style="width:100%; border-radius: 6px; object-fit: cover;">
-
+    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+      <img src="DSC02611.JPG" style="width:100%; border-radius: 6px; object-fit: contain;">
+      <img src="DSC02615.JPG" style="width:100%; border-radius: 6px; object-fit: contain;">
+      <img src="DSC02585.JPG" style="width:100%; border-radius: 6px; object-fit: contain;">
+      <img src="IMG_3220.jpg" style="width:100%; border-radius: 6px; object-fit: contain;">
+      <img src="IMG_6134.jpg" style="width:100%; border-radius: 6px; object-fit: contain;">
+      <img src="IMG_3228_(copy).jpg" style="width:100%; border-radius: 6px; object-fit: contain;">
+      <img src="IMG_3251.jpg" style="width:100%; border-radius: 6px; object-fit: contain;">
     </div>
   </div>
 </div>
@@ -675,7 +667,7 @@
 
 <!-- PAST RESULTS -->
 <section class="section">
-  <div class="section-label fade-up">Race History</div>
+  <div class="section-label fade-up">Event History</div>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
 
     <div class="info-card fade-up">
